@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SLOTIX | Play More, Pay Less</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-variant": "#262626",
+              "on-primary-container": "#274900",
+              "on-tertiary": "#006834",
+              "surface-dim": "#0e0e0e",
+              "on-error": "#450900",
+              "surface-container-highest": "#262626",
+              "on-primary": "#305600",
+              "tertiary-fixed-dim": "#5bef90",
+              "secondary-fixed-dim": "#d6d4d3",
+              "inverse-on-surface": "#555555",
+              "on-primary-fixed": "#234200",
+              "tertiary": "#c3ffcd",
+              "on-secondary-container": "#d2d0cf",
+              "surface-container-high": "#1f1f1f",
+              "inverse-surface": "#f9f9f9",
+              "primary-dim": "#8ae31f",
+              "secondary": "#e5e2e1",
+              "outline-variant": "#484848",
+              "tertiary-container": "#6bfe9c",
+              "surface-bright": "#2c2c2c",
+              "background": "#0e0e0e",
+              "primary": "#97f231",
+              "tertiary-dim": "#5bef90",
+              "on-primary-fixed-variant": "#366100",
+              "on-tertiary-fixed": "#004a23",
+              "on-secondary": "#525151",
+              "primary-fixed-dim": "#8ae31f",
+              "on-error-container": "#ffd2c8",
+              "secondary-dim": "#d6d4d3",
+              "secondary-fixed": "#e5e2e1",
+              "surface": "#0e0e0e",
+              "surface-container-lowest": "#000000",
+              "on-secondary-fixed-variant": "#5c5b5b",
+              "secondary-container": "#474746",
+              "surface-container": "#191919",
+              "error-container": "#b92902",
+              "surface-container-low": "#131313",
+              "on-tertiary-container": "#005f2f",
+              "surface-tint": "#97f231",
+              "tertiary-fixed": "#6bfe9c",
+              "inverse-primary": "#3c6b00",
+              "on-surface": "#ffffff",
+              "error-dim": "#d53d18",
+              "primary-container": "#84dd15",
+              "on-surface-variant": "#ababab",
+              "primary-fixed": "#97f231",
+              "error": "#ff7351",
+              "on-secondary-fixed": "#403f3f",
+              "outline": "#757575",
+              "on-background": "#ffffff",
+              "on-tertiary-fixed-variant": "#006a35"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        * { transition: all 0.3s ease; }
+        body { background-color: #0e0e0e; color: #ffffff; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+        .glass-panel { background: rgba(31, 31, 31, 0.6); backdrop-filter: blur(20px); transition: all 0.4s ease; }
+        .neon-glow-primary { box-shadow: 0 0 20px rgba(151, 242, 49, 0.15); }
+        .neon-text-glow { text-shadow: 0 0 12px rgba(151, 242, 49, 0.4); }
+        .kinetic-gradient { background: linear-gradient(135deg, #97f231 0%, #84dd15 100%); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        button, a { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        img { transition: transform 0.5s ease, opacity 0.5s ease; }
+    </style>
+</head>
+<body class="selection:bg-primary selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full flex justify-between items-center px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-5 z-[100] bg-[#0e0e0e]/80 backdrop-blur-md">
+<div class="flex items-center gap-4 sm:gap-6 md:gap-8">
+<img src="logo.png" alt="SLOTIX" class="h-24 sm:h-16 md:h-20 lg:h-24">
+<nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+<a class="text-[#97f231] font-bold font-headline transition-all hover:scale-105 active:brightness-125" href="#hero">Home</a>
+<a class="text-white/70 font-bold font-headline hover:text-[#97f231] transition-all hover:scale-105 active:brightness-125" href="#features">Features</a>
+<a class="text-white/70 font-bold font-headline hover:text-[#97f231] transition-all hover:scale-105 active:brightness-125" href="#how-it-works">How It Works</a>
+<a class="text-white/70 font-bold font-headline hover:text-[#97f231] transition-all hover:scale-105 active:brightness-125" href="#cta">Get Started</a>
+</nav>
+</div>
+<div class="flex items-center">
+<a class="flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-outline-variant/20 hover:border-primary/50 text-primary transition-all hover:scale-105 font-headline font-bold" href="https://www.instagram.com/slot_ix?igsh=MWMzdTZ3dmVpcGVtYQ==" target="_blank" rel="noopener noreferrer">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+<span class="text-sm sm:text-base">Let's Connect</span>
+</a>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section id="hero" class="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 overflow-hidden pt-20 pb-24" style="margin-top: -100px;">
+<!-- Background Radial Glow -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-8 sm:gap-12 items-center relative z-10">
+<div class="text-center lg:text-left space-y-6 sm:space-y-8">
+<div class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-surface-container-high/50 border border-outline-variant/20 backdrop-blur-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-primary">Free Listing • 50%+ OFF</span>
+</div>
+<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black font-headline leading-[0.9] tracking-tighter text-white uppercase italic">
+                        Book More,<br/><span class="text-primary neon-text-glow">Pay Less.</span>
+</h1>
+<p class="text-on-surface-variant text-sm sm:text-base md:text-lg lg:text-xl max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed">
+                        Discount-first sports &amp; activity booking platform. Unlock exclusive deals up to 50% OFF when you pay through the app.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-4">
+<button class="kinetic-gradient text-on-primary-container font-headline font-black px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 md:py-5 rounded-2xl text-base sm:text-lg md:text-xl hover:scale-105 active:scale-95 transition-all shadow-[0_0_30px_rgba(151,242,49,0.3)]">
+                            Unlock Deals Now
+                        </button>
+<button class="glass-panel text-white border border-outline-variant/30 font-headline font-bold px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 md:py-5 rounded-2xl text-base sm:text-lg md:text-xl hover:bg-surface-bright transition-all">
+                            List Your Venue Free
+                        </button>
+</div>
+</div>
+<!-- 3D Style Visual -->
+<div class="relative flex justify-center items-center mt-8 lg:mt-0">
+<div class="relative w-full aspect-square max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-lg">
+<div class="absolute inset-0 bg-primary/20 blur-[100px] rounded-full"></div>
+<div class="relative w-full h-full flex items-center justify-center">
+<img class="w-full h-full max-w-[250px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[500px] object-contain relative z-10 animate-bounce-ball" src="ball.png" alt="Bouncing ball" style="margin-top: 100px;"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Scrolling Benefits Strip -->
+<section class="py-12 bg-surface-container-low overflow-hidden border-y border-outline-variant/10">
+<div class="flex items-center gap-16 whitespace-nowrap animate-infinite-scroll">
+<!-- Iteration for seamless loop -->
+<div class="flex items-center gap-16">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="local_offer">local_offer</span>
+<span class="font-headline font-bold text-xl uppercase italic">Free Vendor Listing - Zero Fees</span>
+</div>
+<div class="w-2 h-2 bg-outline-variant rounded-full"></div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="percent">percent</span>
+<span class="font-headline font-bold text-xl uppercase italic">Up to 50%+ Discounts on Every Booking</span>
+</div>
+<div class="w-2 h-2 bg-outline-variant rounded-full"></div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="payments">payments</span>
+<span class="font-headline font-bold text-xl uppercase italic">Pay Through App - Unlock Exclusive Deals</span>
+</div>
+<div class="w-2 h-2 bg-outline-variant rounded-full"></div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="qr_code_scanner">qr_code_scanner</span>
+<span class="font-headline font-bold text-xl uppercase italic">QR Check-in - Instant Verification</span>
+</div>
+</div>
+<!-- Duplicate for loop -->
+<div class="flex items-center gap-16">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="local_offer">local_offer</span>
+<span class="font-headline font-bold text-xl uppercase italic">Free Vendor Listing - Zero Fees</span>
+</div>
+<div class="w-2 h-2 bg-outline-variant rounded-full"></div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="percent">percent</span>
+<span class="font-headline font-bold text-xl uppercase italic">Up to 50%+ Discounts on Every Booking</span>
+</div>
+<div class="w-2 h-2 bg-outline-variant rounded-full"></div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="payments">payments</span>
+<span class="font-headline font-bold text-xl uppercase italic">Pay Through App - Unlock Exclusive Deals</span>
+</div>
+<div class="w-2 h-2 bg-outline-variant rounded-full"></div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="qr_code_scanner">qr_code_scanner</span>
+<span class="font-headline font-bold text-xl uppercase italic">QR Check-in - Instant Verification</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Card Section -->
+<section id="features" class="py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col lg:flex-row gap-12 sm:gap-16 items-center">
+<div class="lg:w-1/2 space-y-4 sm:space-y-6">
+<h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-headline tracking-tighter leading-tight uppercase italic">
+                            The Smarter Way to <span class="text-primary">Play &amp; Save</span>
+</h2>
+<p class="text-on-surface-variant text-lg sm:text-xl leading-relaxed">
+                            SLOTIX flips the traditional marketplace. Vendors list for FREE and share discounts with users. You unlock exclusive savings ONLY when you pay through the app — just like Swiggy Dine-In.
+                        </p>
+<div class="pt-6">
+<ul class="space-y-3 sm:space-y-4">
+<li class="flex items-center gap-3 sm:gap-4 group">
+<div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
+<span class="material-symbols-outlined text-primary text-lg sm:text-xl" data-icon="check_circle">check_circle</span>
+</div>
+<span class="font-bold text-base sm:text-lg">15-50% OFF Every Booking</span>
+</li>
+<li class="flex items-center gap-3 sm:gap-4 group">
+<div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
+<span class="material-symbols-outlined text-primary text-lg sm:text-xl" data-icon="check_circle">check_circle</span>
+</div>
+<span class="font-bold text-base sm:text-lg">Payment-Gated Exclusive Deals</span>
+</li>
+<li class="flex items-center gap-3 sm:gap-4 group">
+<div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
+<span class="material-symbols-outlined text-primary text-lg sm:text-xl" data-icon="check_circle">check_circle</span>
+</div>
+<span class="font-bold text-base sm:text-lg">Zero Listing Fees for Vendors</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full">
+<div class="glass-panel p-6 sm:p-8 rounded-2xl border border-outline-variant/20 space-y-4 hover:border-primary/40 transition-all group overflow-hidden">
+<span class="material-symbols-outlined text-3xl sm:text-4xl text-primary" data-icon="store">store</span>
+<h3 class="text-lg sm:text-xl font-headline font-black uppercase break-words">Free Listing</h3>
+<p class="text-on-surface-variant text-xs sm:text-sm break-words">Zero upfront cost. No monthly fees. Vendors join with zero financial risk.</p>
+</div>
+<div class="glass-panel p-6 sm:p-8 rounded-2xl border border-outline-variant/20 space-y-4 sm:mt-12 hover:border-primary/40 transition-all group overflow-hidden">
+<span class="material-symbols-outlined text-xl sm:text-2xl text-primary" data-icon="discount">discount</span>
+<h3 class="text-base sm:text-s font-headline font-black uppercase break-words">Max Discounts</h3>
+<p class="text-on-surface-variant text-xs sm:text-sm break-words">Users get 15-50%+ OFF on every booking through the app.</p>
+</div>
+<div class="glass-panel p-6 sm:p-8 rounded-2xl border border-outline-variant/20 space-y-4 sm:-mt-12 hover:border-primary/40 transition-all group overflow-hidden">
+<span class="material-symbols-outlined text-3xl sm:text-4xl text-primary" data-icon="lock">lock</span>
+<h3 class="text-lg sm:text-xl font-headline font-black uppercase break-words">App-Only Unlock</h3>
+<p class="text-on-surface-variant text-xs sm:text-sm break-words">Discounts activate exclusively when users pay via SLOTIX app.</p>
+</div>
+<div class="glass-panel p-6 sm:p-8 rounded-2xl border border-outline-variant/20 space-y-4 hover:border-primary/40 transition-all group overflow-hidden">
+<span class="material-symbols-outlined text-3xl sm:text-4xl text-primary" data-icon="qr_code_2">qr_code_2</span>
+<h3 class="text-lg sm:text-xl font-headline font-black uppercase break-words">QR Verification</h3>
+<p class="text-on-surface-variant text-xs sm:text-sm break-words">User receives QR code. Vendor scans to confirm. Clean check-in.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reward System Section (Bento Grid) -->
+<section id="how-it-works" class="py-16 sm:py-20 md:py-24 lg:py-32 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
+<div class="text-center mb-12 sm:mb-16 md:mb-20">
+<h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-headline tracking-tighter uppercase italic">
+                        How SLOTIX <span class="text-primary">Works 🚀</span>
+</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:grid-rows-2 gap-4 sm:gap-6 h-auto md:h-[600px]">
+<!-- Bento Card 1 -->
+<div class="md:col-span-2 md:row-span-2 glass-panel rounded-2xl border border-outline-variant/10 p-6 sm:p-8 md:p-10 flex flex-col justify-between group overflow-hidden relative min-h-[300px] sm:min-h-[400px]">
+<div class="relative z-10">
+<div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-primary flex items-center justify-center mb-6 sm:mb-8">
+<span class="material-symbols-outlined text-3xl sm:text-4xl text-on-primary-container" data-icon="search" style="font-variation-settings: 'FILL' 1;">search</span>
+</div>
+<h3 class="text-2xl sm:text-3xl font-headline font-black uppercase italic mb-3 sm:mb-4 break-words">Browse &amp; Discover</h3>
+<p class="text-on-surface-variant text-base sm:text-lg max-w-sm">Find nearby sports venues with GPS. See original price vs SLOTIX price with huge 'YOU SAVE ₹X' in green.</p>
+</div>
+<img class="absolute -right-20 -bottom-20 w-60 h-60 sm:w-80 sm:h-80 opacity-40 group-hover:scale-110 group-hover:opacity-60 transition-all duration-700" data-alt="abstract digital wallet with neon green coins exploding outward representing kinetic energy and wealth on a dark high-tech background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa05P66p-aeXGzrxLFy0UbHtRzv3nAtOHb2zWHxn8NhoR7-vm3X2r7SBNyFShxFqDz4uehlGK6w0dJuswulIe3drZCj7wg9vrTD0eTysS2B5GKi3v06QM1z4gFfpUZsyrNBSiLal32U2uXp9Db1Vc7Qp61hj0wJCJbR6S6QqtyPGUvQ1z6whnCjzmPgSqHkzAMRO3YAvns2AgH4n6uIg27600lLlJwC0RY7PlVhU1P1T-i0-GMsnaUYV89NDoZcVP2XhCJYhmqWQQ"/>
+</div>
+<!-- Bento Card 2 -->
+<div class="md:col-span-2 glass-panel rounded-2xl border border-outline-variant/10 p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 sm:gap-8 group min-h-[200px]">
+<div class="flex-1 text-center sm:text-left">
+<h3 class="text-xl sm:text-2xl font-headline font-black uppercase italic mb-2 break-words">Pay &amp; Unlock</h3>
+<p class="text-on-surface-variant text-xs sm:text-sm">Pay through the app via UPI/Card. Discount activates instantly. Receive QR code in under 90 seconds.</p>
+</div>
+<div class="w-20 h-20 sm:w-24 sm:h-24 shrink-0 rounded-full border-4 border-dashed border-primary/30 flex items-center justify-center animate-spin-slow">
+<span class="material-symbols-outlined text-primary text-3xl sm:text-4xl" data-icon="payment">payment</span>
+</div>
+</div>
+<!-- Bento Card 3 -->
+<div class="glass-panel rounded-2xl border border-outline-variant/10 p-6 sm:p-8 space-y-3 sm:space-y-4 hover:bg-surface-bright transition-all min-h-[180px]">
+<span class="material-symbols-outlined text-primary text-3xl sm:text-4xl" data-icon="qr_code_scanner">qr_code_scanner</span>
+<h3 class="text-lg sm:text-xl font-headline font-black uppercase italic break-words">Scan &amp; Play</h3>
+<p class="text-on-surface-variant text-xs">Show QR at venue. Staff scans to verify. Enjoy your slot with maximum savings.</p>
+</div>
+<!-- Bento Card 4 -->
+<div class="glass-panel rounded-2xl border border-outline-variant/10 p-6 sm:p-8 space-y-3 sm:space-y-4 hover:bg-surface-bright transition-all min-h-[180px]">
+<span class="material-symbols-outlined text-primary text-3xl sm:text-4xl" data-icon="stars">stars</span>
+<h3 class="text-lg sm:text-xl font-headline font-black uppercase italic break-words">Slotix Credits</h3>
+<p class="text-on-surface-variant text-xs">Earn credits on every booking. Redeem for future discounts. Refer friends for bonus credits.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section id="cta" class="relative py-20 sm:py-28 md:py-32 lg:py-40 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 overflow-hidden">
+<!-- Background Texture -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-surface via-surface-container-low to-surface opacity-90"></div>
+<img class="w-full h-full object-cover grayscale brightness-[0.2]" data-alt="wide-angle cinematic night shot of a futuristic sports arena with intense neon green lighting beams and a foggy atmospheric mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKxGqEx7Mvu0sS1vh2BSlnOKNLSjdRZjLng2_gnYhbelf6m7KuwILvY7GhDGZzTa6531qtZXxgxRW9H1L8sVtgefphWbEZStJv66eKEN9h46-BoC2Vg0TVmDjW6Cp2Mnrx-l7buGcwqTTBlQ5Mm209tX0A4buqpnCNHHSs2S75CIX1SYXMunomhxAqIYmAbt7vBfT2BRQ6cXoosKmQlKQdS50j1bUKVy8fPBCxIL6Fm3rB9x0uPc0r6z3ViryzAANT3o9zUl1OjQs"/>
+</div>
+<div class="max-w-3xl sm:max-w-4xl mx-auto text-center relative z-10 space-y-8 sm:space-y-12">
+<h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black font-headline tracking-tighter leading-[1.1] uppercase italic">
+                    Built for a generation that <span class="text-primary">refuses to pay full price.</span>
+</h2>
+<p class="text-xl sm:text-2xl font-medium text-on-surface-variant">
+                    Join SLOTIX today. Unlock unlimited discounts on sports venues, fitness activities, and lifestyle experiences.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center pt-8">
+<button class="kinetic-gradient text-on-primary-container font-headline font-black px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-2xl text-lg sm:text-xl md:text-2xl hover:scale-110 active:scale-95 transition-all shadow-[0_0_50px_rgba(151,242,49,0.4)]">
+                        Start Saving Now
+                    </button>
+<button class="bg-white text-black font-headline font-black px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-2xl text-lg sm:text-xl md:text-2xl hover:scale-110 active:scale-95 transition-all">
+                        List Your Venue Free
+                    </button>
+</div>
+<div class="pt-12 flex flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-12 text-on-surface-variant/60 font-headline font-bold uppercase tracking-widest text-xs sm:text-sm">
+<span class="flex items-center gap-2 text-xs sm:text-sm"><span class="material-symbols-outlined text-primary" data-icon="verified_user">verified_user</span> <span class="hidden sm:inline">Secure Payments</span><span class="sm:hidden">Secure</span></span>
+<span class="flex items-center gap-2 text-xs sm:text-sm"><span class="material-symbols-outlined text-primary" data-icon="support_agent">support_agent</span> <span class="hidden sm:inline">24/7 Support</span><span class="sm:hidden">24/7</span></span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="sm:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#1f1f1f]/60 backdrop-blur-2xl rounded-t-[1.5rem] shadow-[0_-8px_32px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center bg-[#84dd15]/20 text-[#97f231] rounded-2xl px-5 py-2 shadow-[0_0_15px_rgba(151,242,49,0.2)]" href="#hero">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 px-5 py-2 hover:text-[#97f231] transition-all" href="#features">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold mt-1">Features</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 px-5 py-2 hover:text-[#97f231] transition-all" href="#how-it-works">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold mt-1">How It Works</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 px-5 py-2 hover:text-[#97f231] transition-all" href="#cta">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+<span class="font-label text-[10px] uppercase tracking-widest font-bold mt-1">Get Started</span>
+</a>
+</nav>
+<!-- Desktop Footer -->
+<footer class="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 border-t border-outline-variant/10 mb-24 sm:mb-0">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start gap-8 sm:gap-12 lg:gap-0">
+<div class="space-y-4 sm:space-y-6 w-full lg:w-auto">
+<img src="logo.png" alt="SLOTIX" class="h-16 md:h-20 lg:h-24">
+<p class="text-on-surface-variant max-w-xs font-medium">Discount-first sports &amp; activity booking platform. Book More. Pay Less.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full glass-panel flex items-center justify-center border border-outline-variant/20 hover:border-primary/50 text-primary transition-all" href="https://www.instagram.com/slot_ix?igsh=MWMzdTZ3dmVpcGVtYQ==" target="_blank" rel="noopener noreferrer">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-12 lg:gap-20 w-full lg:w-auto">
+<div class="space-y-3 sm:space-y-4">
+<h4 class="font-headline font-black uppercase text-xs sm:text-sm tracking-[0.2em] text-white">Platform</h4>
+<ul class="space-y-1.5 sm:space-y-2 text-on-surface-variant font-medium text-xs sm:text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">How it works</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Find Venues</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">List Your Venue</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Slotix Credits</a></li>
+</ul>
+</div>
+<div class="space-y-3 sm:space-y-4">
+<h4 class="font-headline font-black uppercase text-xs sm:text-sm tracking-[0.2em] text-white">Company</h4>
+<ul class="space-y-1.5 sm:space-y-2 text-on-surface-variant font-medium text-xs sm:text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">About SLOTIX</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Become a Partner</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div class="space-y-3 sm:space-y-4">
+<h4 class="font-headline font-black uppercase text-xs sm:text-sm tracking-[0.2em] text-white">Support</h4>
+<ul class="space-y-1.5 sm:space-y-2 text-on-surface-variant font-medium text-xs sm:text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto pt-8 sm:pt-12 md:pt-20 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-on-surface-variant/40 text-[10px] sm:text-xs font-bold uppercase tracking-widest">
+<span class="text-center sm:text-left">© 2026 SLOTIX INTERACTIVE. ALL RIGHTS RESERVED.</span>
+<div class="flex flex-wrap justify-center sm:justify-end gap-3 sm:gap-4 md:gap-8 text-[10px] sm:text-xs">
+<a href="https://tech4brand.pages.dev/" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">Design and Developed by T4B</a>
+</div>
+</div>
+</footer>
+<style>
+        @keyframes infinite-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        .animate-infinite-scroll {
+            animation: infinite-scroll 40s linear infinite;
+        }
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes spin-reverse-slow {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 15s linear infinite;
+        }
+        .animate-spin-reverse-slow {
+            animation: spin-reverse-slow 20s linear infinite;
+        }
+        @keyframes bounce-ball {
+            0%, 100% { transform: translateY(0); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
+            50% { transform: translateY(-150px); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+        }
+        .animate-bounce-ball {
+            animation: bounce-ball 1.5s ease-in-out infinite;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+    </style>
+</body></html>
